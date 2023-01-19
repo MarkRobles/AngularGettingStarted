@@ -5,7 +5,10 @@ import { Component } from "@angular/core";
     templateUrl:'./product-list.component.html'
 })
 export class ProductListComponent{
-    pageTitle:string = 'Product List';
+    pageTitle = 'Product List';
+    imageWidth:number =50; //You cand add or not the type. Angular infer the type
+    imageMargin = 2;
+    showImage: boolean = false;
     products: any[] = [
         {
           "productId": 2,
@@ -28,4 +31,8 @@ export class ProductListComponent{
           "imageUrl": "assets/images/hammer.png"
         }
       ];
+
+      toggleImage(): void{
+          this.showImage = !this.showImage;
+      }
 }
