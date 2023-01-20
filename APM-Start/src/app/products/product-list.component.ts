@@ -9,6 +9,7 @@ export class ProductListComponent{
     imageWidth:number =50; //You cand add or not the type. Angular infer the type
     imageMargin = 2;
     showImage: boolean = false;
+    listFilter: string =  'cart';
     products: any[] = [
         {
           "productId": 2,
