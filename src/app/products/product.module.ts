@@ -7,6 +7,7 @@ import { StartComponent } from '../shared/start.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './product-detail.guard';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -14,21 +15,19 @@ import { ProductDetailGuard } from './product-detail.guard';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ConvertToSpacesPipe,
-    StartComponent
+    ConvertToSpacesPipe
   ],
   imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule.forChild([
 
+    RouterModule.forChild([
       {path:'products',component:ProductListComponent},
       {
         path: 'products/:id',
         canActivate:[ProductDetailGuard],
         component:ProductDetailComponent
       },
-    ])
+    ]),
+    SharedModule
   ]
 })
 export class ProductModule { }
